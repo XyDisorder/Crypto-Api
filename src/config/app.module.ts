@@ -22,13 +22,11 @@ import { randomBytes } from 'crypto';
 import { HMAC_SECRET_TOKEN } from '../domain/ports/tokens';
 
 @Module({
-  /* charge .env et rend ConfigService disponible partout */
   imports: [ConfigModule.forRoot({ isGlobal: true })],
 
-  /* Les contrôleurs (vide pour l’instant, ajoute-les plus tard) */
   controllers: [EncryptController, SignController],
 
-  /* Fournisseurs disponibles à l’injection */
+  /* Providers available to inject */
   providers: [
     /* ---- Ports → Adapters ---- */
     { provide: EncrypterPort, useClass: Base64EncrypterAdapter },
@@ -44,7 +42,7 @@ import { HMAC_SECRET_TOKEN } from '../domain/ports/tokens';
     {
       provide: HMAC_SECRET_TOKEN,
       useFactory: (config: ConfigService) =>
-        config.get<string>('HMAC_SECRET') ?? // env ?
+        config.get<string>('HMAC_SECRET') ?? // env or default :
         randomBytes(32).toString('hex'), // random key aléatoire
       inject: [ConfigService],
     },
