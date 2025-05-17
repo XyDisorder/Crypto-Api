@@ -1,4 +1,4 @@
-# 🛡️ Riot Crypto API
+# 🛡️ TRYRIOT TAKE-HOME CHALLENGE API
 
 A lightweight, hexagonal cryptography API built with NestJS and TypeScript.
 

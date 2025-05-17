@@ -20,13 +20,8 @@ export class SignController {
 
   @Post('/sign')
   @HttpCode(200)
-  @ApiOperation({
-    summary: 'Generate a Json payload with a unique signature property',
-  })
-  @ApiResponse({
-    status: 200,
-    description: 'Signature calculated successfully',
-  })
+  @ApiOperation({summary: 'Generate a Json payload with a unique signature property',})
+  @ApiResponse({ status: 200, description: 'Signature calculated successfully',})
   @ApiResponse({ status: 400, description: 'Invalid payload' })
   @ApiBody({ type: Object, description: 'Json payload to sign' })
   sign(@Body() dto: JsonValue): SignResponseDto {

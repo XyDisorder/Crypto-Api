@@ -2,7 +2,7 @@ import { JsonValue } from '../../../domain/shared/json.types';
 
 export class Base64Utils {
   static toB64(value: JsonValue): string {
-    // objects ou array → JSON
+    // objects or array → JSON
     if (typeof value === 'object' && value !== null) {
       return Buffer.from(JSON.stringify(value)).toString('base64');
     }
@@ -10,7 +10,7 @@ export class Base64Utils {
     return Buffer.from(String(value)).toString('base64');
   }
 
-  /** heuristic :  base64 vali  (length multiple of 4, alphabet 64) */
+  /** heuristic :  base64 valid  (length multiple of 4, alphabet 64) */
   static looksLikeBase64(str: string): boolean {
     return str.length % 4 === 0 && /^[A-Za-z0-9+/]+={0,2}$/.test(str);
   }
