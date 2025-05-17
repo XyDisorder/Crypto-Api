@@ -2,5 +2,5 @@ import {JsonValue} from "../shared/json.types";
 
 export abstract class SignerPort {
     abstract sign(data: JsonValue): string;
-    abstract verify(data: JsonValue): boolean;
+    abstract verify(data: JsonValue, signature: string): boolean;
 }

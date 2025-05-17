@@ -7,7 +7,7 @@ import { JsonValue } from '../../domain/shared/json.types';
 export class VerifyUseCase {
     constructor(private readonly signer: SignerPort) {}
 
-    async execute(payload: JsonValue, signature: string): boolean {
+     execute(payload: JsonValue, signature: string): boolean {
         return this.signer.verify(payload, signature);
     }
 }
