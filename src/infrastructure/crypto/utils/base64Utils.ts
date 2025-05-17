@@ -23,7 +23,7 @@ export class Base64Utils {
     const decoded = Buffer.from(val, 'base64').toString();
 
     try {
-      return JSON.parse(decoded) as JsonValue;          // object, nombre
+      return JSON.parse(decoded) as JsonValue;          // object, number, boolean, null
     } catch {
       return decoded;
     }

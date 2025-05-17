@@ -21,7 +21,6 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document); // URI = /api
 
   /* ---------- Run ---------- */
-  // Validation stricte, transforme les payloads, masque l’objet d’origine
   app.useGlobalPipes(
       new ValidationPipe({
         whitelist: true,            // delete unknown props

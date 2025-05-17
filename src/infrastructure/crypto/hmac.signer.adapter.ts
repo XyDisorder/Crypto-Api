@@ -5,7 +5,7 @@ import { HMAC_SECRET_TOKEN } from '../../domain/ports/tokens';   // token déjà
 import {canonicalize, JsonValue} from '../../domain/shared/json.types';
 import {SignerPort} from "../../domain/ports/signer.port";
 
-/* liste blanche */
+/* White list */
 const ALLOWED = ['sha256', 'sha384', 'sha512'] as const;
 type AllowedAlgo = typeof ALLOWED[number];
 
