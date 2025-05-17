@@ -2,7 +2,7 @@
 export type JsonPrimitive = string | number | boolean | null;
 
 export interface JsonObject {
-    [key: string]: JsonValue;
+  [key: string]: JsonValue;
 }
 
 export type JsonValue = JsonPrimitive | JsonValue[] | JsonObject;

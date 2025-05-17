@@ -1,6 +1,6 @@
-import {JsonMap} from "../shared/json.types";
+import { JsonMap } from '../shared/json.types';
 
 export abstract class EncrypterPort {
-    abstract encryptDepth(payload: JsonMap): Record<string, string>;
-    abstract decryptDepth(payload: JsonMap): JsonMap;
+  abstract encryptDepth(payload: JsonMap): JsonMap;
+  abstract decryptDepth(payload: JsonMap): JsonMap;
 }

@@ -1,16 +1,13 @@
-export class SignRequestDto {
-    body!: string;
-}
+import { IsDefined, IsString } from 'class-validator';
+import { JsonValue } from '../../../domain/shared/json.types';
 
 export class SignResponseDto {
-    signature!: string;
+  @IsString()
+  signature!: string;
 }
-
 export class VerifyRequestDto {
-    body!: string;
-    signature!: string;
-}
-
-export class VerifyResponseDto {
-    valid!: boolean;
+  @IsString()
+  signature!: string;
+  @IsDefined()
+  data!: JsonValue;
 }
