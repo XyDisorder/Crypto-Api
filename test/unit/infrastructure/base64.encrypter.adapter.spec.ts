@@ -1,4 +1,5 @@
 import { Base64EncrypterAdapter } from '../../../src/infrastructure/crypto/base64.encrypter.adapter';
+import {HmacSignerAdapter} from "../../../src/infrastructure/crypto/hmac.signer.adapter";
 
 describe('Base64EncrypterAdapter', () => {
   const adapter = new Base64EncrypterAdapter();
@@ -13,5 +14,14 @@ describe('Base64EncrypterAdapter', () => {
   it('leaves non-base64 strings intact', () => {
     const obj = { raw: 'notBase64' };
     expect(adapter.decryptDepth(obj)).toEqual(obj);
+  });
+  it('throws on short secret', () => {
+    const cfg = { get: () => 'sha256' } as any;
+    expect(() => new HmacSignerAdapter('abcd', cfg)).toThrow();
+  });
+
+  it('throws on invalid algo', () => {
+    const cfg = { get: () => 'md5' } as any;
+    expect(() => new HmacSignerAdapter('a'.repeat(32), cfg)).toThrow();
   });
 });
