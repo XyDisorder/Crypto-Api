@@ -9,7 +9,6 @@ export type JsonValue = JsonPrimitive | JsonValue[] | JsonObject;
 
 export type JsonMap = Record<string, JsonValue>;
 
-
 /** Convert  JsonValue in stable string  */
 export function canonicalize(value: JsonValue): string {
   if (value === null || typeof value !== 'object') {

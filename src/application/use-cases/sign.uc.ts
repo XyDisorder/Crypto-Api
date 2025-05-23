@@ -2,8 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { SignerPort } from '../../domain/ports/signer.port';
 import { JsonValue } from '../../domain/shared/json.types';
 
-/** Calculates the HMAC (or other algo) signature of a JSON. */
 @Injectable()
+/** Calculates the HMAC (or other algo) signature of a JSON. */
 export class SignUseCase {
   constructor(private readonly signer: SignerPort) {}
 

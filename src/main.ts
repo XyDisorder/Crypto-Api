@@ -12,7 +12,7 @@ async function bootstrap() {
 
   /* ---------- Swagger ---------- */
   const config = new DocumentBuilder()
-    .setTitle('TryRiot Home Challenge API')
+    .setTitle('Crypto API')
     .setDescription('Endpoints available : encrypt / decrypt / sign / verify')
     .setVersion('1.0')
     .build();

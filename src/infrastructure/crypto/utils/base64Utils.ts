@@ -28,6 +28,4 @@ export class Base64Utils {
       return decoded;
     }
   }
-
-
 }

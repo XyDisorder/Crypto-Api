@@ -13,13 +13,8 @@ export class EncryptController {
 
   @Post('/encrypt')
   @HttpCode(200)
-  @ApiOperation({
-    summary: 'Generate a payload with all properties at depth 1 encrypted',
-  })
-  @ApiResponse({
-    status: 200,
-    description: 'Encryption calculated successfully',
-  })
+  @ApiOperation({ summary: 'Generate a payload with all properties at depth 1 encrypted' })
+  @ApiResponse({ status: 200, description: 'Encryption calculated successfully'})
   @ApiResponse({ status: 400, description: 'Invalid payload' })
   @ApiBody({ type: Object, description: 'Json payload to encrypt' })
   encrypt(@Body() dto: JsonMap): JsonMap {
@@ -29,10 +24,7 @@ export class EncryptController {
   @Post('/decrypt')
   @HttpCode(200)
   @ApiOperation({ summary: 'Generate a decrypted values' })
-  @ApiResponse({
-    status: 200,
-    description: 'Signature calculated successfully',
-  })
+  @ApiResponse({ status: 200, description: 'Signature calculated successfully' })
   @ApiResponse({ status: 400, description: 'Invalid payload' })
   @ApiBody({ type: Object, description: 'Json payload to decrypt' })
   decrypt(@Body() dto: JsonMap): JsonMap {

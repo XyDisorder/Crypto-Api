@@ -1,4 +1,4 @@
-# 🛡️ TRYRIOT TAKE-HOME CHALLENGE API
+# 🛡️ Crypto API
 
 A lightweight, hexagonal cryptography API built with NestJS and TypeScript.
 
@@ -15,7 +15,6 @@ A lightweight, hexagonal cryptography API built with NestJS and TypeScript.
 - **Hexagonal Architecture** for easy algorithm replacement
 - **Test Coverage > 90%** on all core components
 - **Integrated Swagger Documentation**
-- **Docker Support** ready out of the box
 
 ## 📋 Table of Contents
 
